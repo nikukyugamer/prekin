@@ -1,8 +1,19 @@
 # Prekin
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prekin`. To experiment with that code, run `bin/console` for an interactive prompt.
+## What is Prekin?
 
-TODO: Delete this and the text above, and describe your gem
+### Naming
+
+- `Prekin` means `PREMIUM FRIDAY`
+  - `kin` means FRIDAY (`kin-yo-bi`) in Japanese
+  - So `PRE`mium `KIN`-yo-bi is `Prekin`
+
+### Webpage
+
+- A webpage by Ministry of Economy, Trade and Industry in Japanese
+  - http://www.meti.go.jp/policy/mono_info_service/service/premium-friday/
+- A webpage by Premium Friday Committee
+  - https://premium-friday.com/
 
 ## Installation
 
