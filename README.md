@@ -10,7 +10,7 @@
 
 ### Webpage
 
-- A webpage by Ministry of Economy, Trade and Industry in Japanese
+- A webpage by Ministry of Economy, Trade and Industry in Japan
   - http://www.meti.go.jp/policy/mono_info_service/service/premium-friday/
 - A webpage by Premium Friday Committee
   - https://premium-friday.com/
