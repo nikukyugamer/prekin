@@ -1,4 +1,4 @@
-require "prekin/version"
+require 'prekin/version'
 
 module Prekin
   class Error < StandardError; end
