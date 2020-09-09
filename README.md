@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/nikukyugamer/prekin.svg?style=svg)](https://circleci.com/gh/nikukyugamer/prekin)
+
 # Prekin
 
 ## What is Prekin?

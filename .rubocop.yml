@@ -1,6 +1,3 @@
-Rails:
-  Enabled: true
-
 Style/FrozenStringLiteralComment:
   Enabled: false
 
@@ -11,13 +8,6 @@ Style/TrailingCommaInHashLiteral:
 Style/TrailingCommaInArrayLiteral:
   Enabled: false # 有効にすると見た目がいいレイアウトにした際に怒られるため無効にする
   # EnforcedStyleForMultiline: consistent_comma
-
-Style/BracesAroundHashParameters:
-  Enabled: false # 有効にすると見た目がいいレイアウトにした際に怒られるため無効にする
-  # EnforcedStyle: context_dependent
-
-Layout/TrailingBlankLines:
-  Enabled: false # 有効にした場合、コメントが最終行だとどんな設定にしてても怒られるため無効にする
 
 Style/AsciiComments:
   Enabled: false
@@ -46,11 +36,12 @@ Style/ClassAndModuleChildren:
 Metrics/MethodLength:
   Enabled: false # メソッドの長さが長いと怒られる（有用なので後で調整すること）
 
-Rails/Output:
-  Enabled: false # プリントデバッグに使いたいので勘弁してくれ
-
 Metrics/AbcSize:
   Max: 20 # これぐらいの長さになることは許してほしい
 
 Style/RegexpLiteral:
   Enabled: false # 有効にすると Lint/Syntax で怒られる？ので無効化
+
+# 頃合いを見て true に変更する
+Gemspec/RequiredRubyVersion:
+  Enabled: false

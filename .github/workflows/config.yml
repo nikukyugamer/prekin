@@ -1,0 +1,38 @@
+on: [push]
+name: Prekin
+jobs:
+  prekin_github_actions:
+    name: Prekin CI
+    runs-on: ubuntu-latest
+    container:
+      image: ruby:2.7.1
+      env:
+        BUNDLE_PATH: vendor/bundle
+    steps:
+      - uses: actions/checkout@v2
+      - name: Bundler の 最新版 を入れる
+        run: |
+          gem install bundler --no-document
+      - name: RubyGems のキャッシュを復元する
+        uses: actions/cache@v1
+        id: rubygems-cache
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+      - name: $ bundle install を行う
+        run: |
+          bundle config set deployment 'true'
+          bundle install --jobs 4 --retry 3
+      - name: RSpec を実行する
+        if: always()
+        run: |
+          bundle exec rspec
+        env:
+          POSTGRES_HOST: postgres
+          RAILS_ENV: test
+      - name: RuboCop を実行する
+        if: always()
+        run: |
+          bundle exec rubocop -D -E -S -P
