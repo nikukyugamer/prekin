@@ -5,16 +5,16 @@ jobs:
     name: Prekin CI
     runs-on: ubuntu-latest
     container:
-      image: ruby:2.7.1
+      image: ruby:2.7.2
       env:
         BUNDLE_PATH: vendor/bundle
     steps:
-      - uses: actions/checkout@v2
-      - name: Bundler の 最新版 を入れる
+      - uses: actions/checkout@v3
+      - name: Install the latest version's Bundler
         run: |
           gem install bundler --no-document
-      - name: RubyGems のキャッシュを復元する
-        uses: actions/cache@v1
+      - name: Restore caches of RubyGems
+        uses: actions/cache@v3
         id: rubygems-cache
         with:
           path: vendor/bundle
@@ -25,14 +25,14 @@ jobs:
         run: |
           bundle config set deployment 'true'
           bundle install --jobs 4 --retry 3
-      - name: RSpec を実行する
+      - name: Execute RSpec
         if: always()
         run: |
           bundle exec rspec
         env:
           POSTGRES_HOST: postgres
           RAILS_ENV: test
-      - name: RuboCop を実行する
+      - name: Execute RuboCop
         if: always()
         run: |
           bundle exec rubocop -D -E -S -P
