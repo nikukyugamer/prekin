@@ -5,7 +5,7 @@ jobs:
     name: Prekin CI
     runs-on: ubuntu-latest
     container:
-      image: ruby:2.7.6
+      image: ruby:3.1.2
       env:
         BUNDLE_PATH: vendor/bundle
     steps:
