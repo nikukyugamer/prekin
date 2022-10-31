@@ -13,3 +13,5 @@
 vendor/
 tmp/
 .vscode/
+.envrc
+.history
