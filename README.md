@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/nikukyugamer/prekin.svg?style=svg)](https://circleci.com/gh/nikukyugamer/prekin)
+[![Prekin](https://github.com/nikukyugamer/prekin/actions/workflows/config.yml/badge.svg?branch=main)](https://github.com/nikukyugamer/prekin/actions/workflows/config.yml) [![CircleCI](https://circleci.com/gh/nikukyugamer/prekin.svg?style=svg)](https://circleci.com/gh/nikukyugamer/prekin)
 
 # Prekin
 
