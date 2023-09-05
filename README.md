@@ -52,6 +52,12 @@ Or install it yourself as:
 #### 2-4. String class
 - `'2020/10/30 00:00:00 +09:00'.prekin? #=> true`
 
+#### 2-5. Next Prekin
+- `Prekin.next #=> "2020-10-30"`
+- `Prekin.next('2023-12-28') #=> "2023-12-29"`
+- `Prekin.next('2023-12-29') #=> "2023-12-29"`
+- `Prekin.next('2023-12-30') #=> "2024-01-26"`
+
 ## Note
 - This gem overwrites `Time`, `Date`, `DateTime` and `String` class.
   - So if you use `Time`, `Date`, `DateTime` and `String` class in your code, you should be careful.
