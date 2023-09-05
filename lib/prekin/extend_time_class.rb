@@ -1,9 +1,8 @@
 class Time
   def prekin?
-    # TODO
-  end
+    next_week = self + (60 * 60 * 24 * 7)
+    next_month = month + 1
 
-  def friday?
-    # TODO
+    friday? && (next_week.month == next_month)
   end
 end
