@@ -35,22 +35,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### 1. require
+`require 'prekin'`
 
-## Development
+### 2. call
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+#### 2-1. Time class
+`Time.local(2020, 10, 30, 0, 0, 0).prekin? #=> true`
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+#### 2-2. Date class
+`Date.new(2020, 10, 30).prekin? #=> true`
 
-## Contributing
+#### 2-3. DateTime class
+`DateTime.new(2020, 10, 30, 0, 0, 0, '+09:00').prekin? #=> true`
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/prekin. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+#### 2-4. String class
+`'2020/10/30 00:00:00 +09:00'.prekin? #=> true`
+
+## Note
+- This gem overwrites `Time`, `Date`, `DateTime` and `String` class.
+  - So if you use `Time`, `Date`, `DateTime` and `String` class in your code, you should be careful.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Prekin project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/prekin/blob/master/CODE_OF_CONDUCT.md).
