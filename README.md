@@ -36,25 +36,36 @@ Or install it yourself as:
 ## Usage
 
 ### 1. require
-`require 'prekin'`
+- `require 'prekin'`
 
 ### 2. call
 
 #### 2-1. Time class
-`Time.local(2020, 10, 30, 0, 0, 0).prekin? #=> true`
+- `Time.local(2020, 10, 30, 0, 0, 0).prekin? #=> true`
 
 #### 2-2. Date class
-`Date.new(2020, 10, 30).prekin? #=> true`
+- `Date.new(2020, 10, 30).prekin? #=> true`
 
 #### 2-3. DateTime class
-`DateTime.new(2020, 10, 30, 0, 0, 0, '+09:00').prekin? #=> true`
+- `DateTime.new(2020, 10, 30, 0, 0, 0, '+09:00').prekin? #=> true`
 
 #### 2-4. String class
-`'2020/10/30 00:00:00 +09:00'.prekin? #=> true`
+- `'2020/10/30 00:00:00 +09:00'.prekin? #=> true`
 
 ## Note
 - This gem overwrites `Time`, `Date`, `DateTime` and `String` class.
   - So if you use `Time`, `Date`, `DateTime` and `String` class in your code, you should be careful.
+
+## Development
+
+#### 1. bundle install
+- `bundle install`
+
+#### 2. irb
+- `bundle exec irb`
+
+#### 3. require
+- `require 'prekin'`
 
 ## License
 
