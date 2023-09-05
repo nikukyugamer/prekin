@@ -23,17 +23,37 @@
 # 27 28 29 30 31
 
 RSpec.describe Prekin do
-  xdescribe 'Timeクラス' do
+  describe 'Timeクラス' do
     it '2020/10/29 23:59:59 +09:00 は prekin でないこと' do
+      target_time = Time.local(
+        2020, 10, 29,
+        23, 59, 59,
+      )
+      expect(target_time.prekin?).to eq false
     end
 
     it '2020/10/30 00:00:00 +09:00 は prekin であること' do
+      target_time = Time.local(
+        2020, 10, 30,
+        0, 0, 0,
+      )
+      expect(target_time.prekin?).to eq true
     end
 
     it '2020/10/30 23:59:59 +09:00 は prekin であること' do
+      target_time = Time.local(
+        2020, 10, 30,
+        23, 59, 59,
+      )
+      expect(target_time.prekin?).to eq true
     end
 
     it '2020/10/31 00:00:00 +09:00 は prekin でないこと' do
+      target_time = Time.local(
+        2020, 10, 31,
+        0, 0, 0,
+      )
+      expect(target_time.prekin?).to eq false
     end
   end
 end
