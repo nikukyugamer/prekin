@@ -23,17 +23,29 @@
 # 27 28 29 30 31
 
 RSpec.describe Prekin do
-  xdescribe 'Dateクラス' do
+  describe 'Dateクラス' do
     it '2020/10/29 23:59:59 +09:00 は prekin でないこと' do
+      target_date = Date.new(2020, 10, 29)
+
+      expect(target_date.prekin?).to eq false
     end
 
     it '2020/10/30 00:00:00 +09:00 は prekin であること' do
+      target_date = Date.new(2020, 10, 30)
+
+      expect(target_date.prekin?).to eq true
     end
 
     it '2020/10/30 23:59:59 +09:00 は prekin であること' do
+      target_date = Date.new(2020, 10, 30)
+
+      expect(target_date.prekin?).to eq true
     end
 
     it '2020/10/31 00:00:00 +09:00 は prekin でないこと' do
+      target_date = Date.new(2020, 10, 31)
+
+      expect(target_date.prekin?).to eq false
     end
   end
 end
