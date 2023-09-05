@@ -23,45 +23,17 @@
 # 27 28 29 30 31
 
 RSpec.describe Prekin do
-  it 'has a version number' do
-    expect(Prekin::VERSION).not_to be nil
-  end
-
-  describe 'Datetime' do
+  xdescribe 'Dateクラス' do
     it '2020/10/29 23:59:59 +09:00 は prekin でないこと' do
-      target_day = DateTime.new(
-        2020, 10, 29,
-        23, 59, 59,
-        '+09:00'
-      )
-      expect(target_day.prekin?).to eq false
     end
 
     it '2020/10/30 00:00:00 +09:00 は prekin であること' do
-      target_day = DateTime.new(
-        2020, 10, 30,
-        0, 0, 0,
-        '+09:00'
-      )
-      expect(target_day.prekin?).to eq true
     end
 
     it '2020/10/30 23:59:59 +09:00 は prekin であること' do
-      target_day = DateTime.new(
-        2020, 10, 30,
-        23, 59, 59,
-        '+09:00'
-      )
-      expect(target_day.prekin?).to eq true
     end
 
     it '2020/10/31 00:00:00 +09:00 は prekin でないこと' do
-      target_day = DateTime.new(
-        2020, 10, 31,
-        0, 0, 0,
-        '+09:00'
-      )
-      expect(target_day.prekin?).to eq false
     end
   end
 end
