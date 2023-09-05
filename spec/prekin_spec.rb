@@ -27,13 +27,41 @@ RSpec.describe Prekin do
     expect(Prekin::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(false)
-  end
+  describe 'Datetime' do
+    it '2020/10/29 23:59:59 +09:00 は prekin でないこと' do
+      target_day = DateTime.new(
+        2020, 10, 29,
+        23, 59, 59,
+        '+09:00'
+      )
+      expect(target_day.prekin?).to eq false
+    end
 
-  it 'returns true in case of prekin' do
-    # FIXME: 日本時間へ
-    target_day = DateTime.new(2020, 10, 30)
-    expect(target_day.prekin?).to eq true
+    it '2020/10/30 00:00:00 +09:00 は prekin であること' do
+      target_day = DateTime.new(
+        2020, 10, 30,
+        0, 0, 0,
+        '+09:00'
+      )
+      expect(target_day.prekin?).to eq true
+    end
+
+    it '2020/10/30 23:59:59 +09:00 は prekin であること' do
+      target_day = DateTime.new(
+        2020, 10, 30,
+        23, 59, 59,
+        '+09:00'
+      )
+      expect(target_day.prekin?).to eq true
+    end
+
+    it '2020/10/31 00:00:00 +09:00 は prekin でないこと' do
+      target_day = DateTime.new(
+        2020, 10, 31,
+        0, 0, 0,
+        '+09:00'
+      )
+      expect(target_day.prekin?).to eq false
+    end
   end
 end
