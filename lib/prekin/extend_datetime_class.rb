@@ -7,8 +7,4 @@ class DateTime
 
     friday? && (next_week.month == next_month.month)
   end
-
-  def friday?
-    wday == 5
-  end
 end
