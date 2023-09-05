@@ -1,9 +1,9 @@
+require 'time'
+
 class String
   def prekin?
-    # TODO
-  end
+    target_time = Time.parse(self)
 
-  def friday?
-    # TODO
+    target_time.prekin?
   end
 end
