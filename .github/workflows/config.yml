@@ -9,7 +9,7 @@ jobs:
       env:
         BUNDLE_PATH: vendor/bundle
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Install the latest version's Bundler
         run: |
           gem install bundler --no-document
